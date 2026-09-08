@@ -1,0 +1,299 @@
+🧮 Basic Calculator Using Python
+
+📌 Project Description
+
+This project is a simple Basic Calculator developed using Python 🐍. The purpose of this project is to perform common mathematical operations such as addition ➕, subtraction ➖, multiplication ✖️, and division ➗. The program is designed as a beginner-friendly console application where the user enters two numbers, selects an operation, and receives the calculated result. This project helps beginners understand fundamental Python concepts such as variables, user input, functions, conditional statements, operators, and error handling.
+
+🎯 Objective
+
+The main objective of this project is to create a simple and interactive calculator that can perform basic arithmetic operations. 🧮 The program takes two numbers from the user and allows the user to select an operation. Based on the selected option, the appropriate calculation is performed and the result is displayed on the screen. 💻
+
+🪜 Step-by-Step Working
+
+1️⃣ Step 1 — Start the Program 🚀
+
+First, the Python program starts execution. The calculator can be organized using separate functions for each mathematical operation. Functions make the program easier to understand, reuse, and maintain.
+
+Basic function syntax:
+
+def function_name(parameters):
+    # statements
+    return result
+
+The "def" keyword is used to define a function, and the "return" statement sends the calculated result back to the calling part of the program.
+
+---
+
+2️⃣ Step 2 — Get the First Number 🔢
+
+The program asks the user to enter the first number. Python's built-in "input()" function is used to receive the value from the keyboard.
+
+Syntax:
+
+num1 = float(input("Enter first number: "))
+
+Here, "input()" accepts the user's input as a string, while "float()" converts the entered value into a decimal number. Using "float()" allows the calculator to work with both whole numbers and decimal numbers.
+
+---
+
+3️⃣ Step 3 — Get the Second Number 🔢
+
+Next, the program asks the user to enter the second number.
+
+Syntax:
+
+num2 = float(input("Enter second number: "))
+
+The value entered by the user is converted into a floating-point number and stored in the variable "num2".
+
+For example:
+
+Enter first number: 25
+Enter second number: 5
+
+The program now has two values:
+
+num1 = 25
+num2 = 5
+
+---
+
+4️⃣ Step 4 — Display the Operations 📋
+
+The calculator provides different operations for the user to choose from. The four basic operations are:
+
+1️⃣ Addition       ➕
+2️⃣ Subtraction    ➖
+3️⃣ Multiplication ✖️
+4️⃣ Division       ➗
+
+The user selects an option by entering its corresponding number.
+
+Syntax:
+
+choice = input("Enter your choice: ")
+
+The "input()" function stores the selected option in the variable "choice".
+
+---
+
+5️⃣ Step 5 — Perform Addition ➕
+
+If the user selects addition, the program adds the two numbers using the "+" operator.
+
+Syntax:
+
+result = num1 + num2
+
+For example:
+
+25 + 5 = 30
+
+The addition operation can also be placed inside a function:
+
+def add(a, b):
+    return a + b
+
+The "add()" function accepts two parameters and returns their sum.
+
+---
+
+6️⃣ Step 6 — Perform Subtraction ➖
+
+If the user selects subtraction, the program subtracts the second number from the first number using the "-" operator.
+
+Syntax:
+
+result = num1 - num2
+
+For example:
+
+25 - 5 = 20
+
+A separate function can be created:
+
+def subtract(a, b):
+    return a - b
+
+The "subtract()" function returns the difference between the two numbers.
+
+---
+
+7️⃣ Step 7 — Perform Multiplication ✖️
+
+If the user selects multiplication, the program multiplies the two numbers using the "*" operator.
+
+Syntax:
+
+result = num1 * num2
+
+For example:
+
+25 × 5 = 125
+
+The operation can be written as a function:
+
+def multiply(a, b):
+    return a * b
+
+The "multiply()" function returns the product of the two numbers.
+
+---
+
+8️⃣ Step 8 — Perform Division ➗
+
+If the user selects division, the program divides the first number by the second number using the "/" operator.
+
+Syntax:
+
+result = num1 / num2
+
+For example:
+
+25 ÷ 5 = 5
+
+A function can be used:
+
+def divide(a, b):
+    return a / b
+
+However, division requires special handling because dividing by zero is not allowed. The program should check the second number before performing the division.
+
+Syntax:
+
+if b != 0:
+    return a / b
+else:
+    return "Cannot divide by zero"
+
+This prevents the program from producing a division-by-zero error. ⚠️
+
+---
+
+9️⃣ Step 9 — Use Conditional Statements 🔀
+
+The calculator uses "if", "elif", and "else" statements to determine which mathematical operation the user selected.
+
+Syntax:
+
+if choice == "1":
+    result = add(num1, num2)
+
+elif choice == "2":
+    result = subtract(num1, num2)
+
+elif choice == "3":
+    result = multiply(num1, num2)
+
+elif choice == "4":
+    result = divide(num1, num2)
+
+else:
+    print("Invalid choice")
+
+The "if" statement checks the first condition. The "elif" statements check additional choices, and the "else" statement handles an invalid selection.
+
+---
+
+🔟 Step 10 — Display the Result 🖥️
+
+After performing the selected mathematical operation, the program displays the result using Python's "print()" function.
+
+Syntax:
+
+print("Result:", result)
+
+For example:
+
+Result: 30
+
+The "print()" function is used to display text and calculated values on the console.
+
+---
+
+⚙️ Functions Used
+
+Function| Purpose
+"input()" ⌨️| Takes input from the user
+"float()" 🔢| Converts input into a decimal number
+"print()" 🖥️| Displays the output
+"add()" ➕| Performs addition
+"subtract()" ➖| Performs subtraction
+"multiply()" ✖️| Performs multiplication
+"divide()" ➗| Performs division
+
+🧩 Operators Used
+
+Operator| Operation| Example
+"+"| Addition ➕| "10 + 5 = 15"
+"-"| Subtraction ➖| "10 - 5 = 5"
+"*"| Multiplication ✖️| "10 * 5 = 50"
+"/"| Division ➗| "10 / 5 = 2"
+"!="| Not equal| "num != 0"
+"=="| Equal comparison| "choice == "1""
+
+🧠 Python Concepts Used
+
+This project demonstrates several fundamental Python programming concepts. 🐍 These include variables for storing values, user input for receiving numbers and choices, functions for organizing calculations, parameters and return values for passing and receiving data, conditional statements for selecting operations, arithmetic operators for performing calculations, and error handling logic for preventing division by zero.
+
+💻 Example Output
+
+================================
+       🧮 BASIC CALCULATOR
+================================
+
+Enter first number: 25
+Enter second number: 5
+
+Choose an operation:
+1. Addition ➕
+2. Subtraction ➖
+3. Multiplication ✖️
+4. Division ➗
+
+Enter your choice: 1
+
+Result: 30.0
+
+Another Example
+
+Enter first number: 100
+Enter second number: 4
+
+Enter your choice: 4
+
+Result: 25.0
+
+🔄 Program Flow
+
+👤 User
+   ↓
+🔢 Enter First Number
+   ↓
+🔢 Enter Second Number
+   ↓
+📋 Select Operation
+   ↓
+🔀 Check User Choice
+   ↓
+➕ ➖ ✖️ ➗
+   ↓
+🧮 Perform Calculation
+   ↓
+🖥️ Display Result
+
+🚀 Learning Outcomes
+
+By completing this project, the learner can understand how to create a basic calculator using Python. The project provides practical knowledge of functions, variables, user input, arithmetic operators, conditional statements, return statements, and basic error prevention. 🎓 It also demonstrates how a larger program can be divided into smaller functions to make the code more organized and readable.
+
+🌟 Future Enhancements
+
+This basic calculator can be improved in the future by adding more mathematical operations such as modulus "%", exponentiation "**", square root, percentage, and other scientific calculations. 🔬 A graphical user interface (GUI) can also be added to make the calculator more interactive and visually appealing.
+
+👨‍💻 Author
+
+Ashwin Kumar.M.K
+
+---
+
+⭐ This project is created for educational purposes to practice the fundamentals of Python programming and arithmetic operations.
