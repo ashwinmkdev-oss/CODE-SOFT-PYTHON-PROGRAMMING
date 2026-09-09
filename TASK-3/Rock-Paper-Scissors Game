@@ -1,0 +1,127 @@
+"""
+Rock-Paper-Scissors Game
+-------------------------
+A simple console-based Rock-Paper-Scissors game against the computer.
+Features:
+    - User input validation
+    - Random computer choice
+    - Win/lose/tie logic
+    - Score tracking across rounds
+    - Play again loop
+    - Clean, user-friendly interface
+"""
+
+import random
+
+VALID_CHOICES = ["rock", "paper", "scissors"]
+
+# Maps each choice to the choice it beats
+BEATS = {
+    "rock": "scissors",
+    "scissors": "paper",
+    "paper": "rock",
+}
+
+
+def get_user_choice():
+    """Prompt the user until they enter a valid choice."""
+    while True:
+        choice = input("Choose rock, paper, or scissors: ").strip().lower()
+        if choice in VALID_CHOICES:
+            return choice
+        print(f"Invalid choice '{choice}'. Please type rock, paper, or scissors.\n")
+
+
+def get_computer_choice():
+    """Randomly select a choice for the computer."""
+    return random.choice(VALID_CHOICES)
+
+
+def determine_winner(user_choice, computer_choice):
+    """
+    Return 'user', 'computer', or 'tie' based on standard
+    Rock-Paper-Scissors rules.
+    """
+    if user_choice == computer_choice:
+        return "tie"
+    if BEATS[user_choice] == computer_choice:
+        return "user"
+    return "computer"
+
+
+def display_round_result(user_choice, computer_choice, result):
+    """Print the choices made and the outcome of the round."""
+    print(f"\nYou chose:      {user_choice.capitalize()}")
+    print(f"Computer chose: {computer_choice.capitalize()}")
+
+    if result == "tie":
+        print("It's a tie!\n")
+    elif result == "user":
+        print("You win this round!\n")
+    else:
+        print("Computer wins this round!\n")
+
+
+def display_scoreboard(user_score, computer_score, rounds_played):
+    """Print the current score after each round."""
+    print("-" * 30)
+    print(f"Rounds played: {rounds_played}")
+    print(f"Your score:      {user_score}")
+    print(f"Computer score:  {computer_score}")
+    print("-" * 30 + "\n")
+
+
+def ask_play_again():
+    """Ask the user if they want to play another round."""
+    while True:
+        answer = input("Play again? (y/n): ").strip().lower()
+        if answer in ("y", "yes"):
+            return True
+        if answer in ("n", "no"):
+            return False
+        print("Please enter 'y' or 'n'.\n")
+
+
+def play_game():
+    """Main game loop handling multiple rounds and score tracking."""
+    print("=" * 40)
+    print("   WELCOME TO ROCK - PAPER - SCISSORS")
+    print("=" * 40)
+    print("Rules: Rock beats Scissors, Scissors beats Paper, Paper beats Rock.\n")
+
+    user_score = 0
+    computer_score = 0
+    rounds_played = 0
+
+    while True:
+        user_choice = get_user_choice()
+        computer_choice = get_computer_choice()
+        result = determine_winner(user_choice, computer_choice)
+
+        display_round_result(user_choice, computer_choice, result)
+
+        rounds_played += 1
+        if result == "user":
+            user_score += 1
+        elif result == "computer":
+            computer_score += 1
+
+        display_scoreboard(user_score, computer_score, rounds_played)
+
+        if not ask_play_again():
+            break
+        print()  # spacing before next round
+
+    print("\nThanks for playing! Final Score:")
+    print(f"You: {user_score}  |  Computer: {computer_score}")
+
+    if user_score > computer_score:
+        print("Overall Winner: YOU! 🎉")
+    elif computer_score > user_score:
+        print("Overall Winner: Computer 🤖")
+    else:
+        print("Overall Result: It's a tie!")
+
+
+if __name__ == "__main__":
+    play_game()
